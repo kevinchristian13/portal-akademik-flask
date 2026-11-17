@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Data Diri - Portal Akademik{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+    <div class="col-md-8">
+        <div class="card shadow border-0 rounded-4">
+            <div class="card-header bg-merah text-center py-3 rounded-top-4">
+                <h4 class="mb-0">Data Diri Mahasiswa</h4>
+            </div>
+            <div class="card-body p-4">
+                <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold text-secondary">Nama lengkap</div>
+                    <div class="col-sm-8">: Michael Kevin Christian</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold text-secondary">NBI</div>
+                    <div class="col-sm-8">: 1482500066</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold text-secondary">Program Studi</div>
+                    <div class="col-sm-8">: Sistem Informasi dan Teknologi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mb-5" id="tabel-ipk" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="col-md-6">
+        <div class="card shadow border-0 rounded-4">
+            <div class="card-header bg-merah text-center py-3 rounded-top-4">
+                <h5 class="mb-0">Rekapitulasi IPK</h5>
+            </div>
+            <div class="card-body p-4 text-center">
+                <table class="table table-bordered mb-0">
+                    <tr>
+                        <th class="bg-light w-50">Semester</th>
+                        <th class="bg-light w-50">Indeks Prestasi (IP)</th>
+                    </tr>
+                    <tr>
+                        <td>Semester 1</td>
+                        <td>3.56</td>
+                    </tr>
+                    <tr>
+                        <td>Semester 2</td>
+                        <td>3.55</td>
+                    </tr>
+                    <tr class="fw-bold table-success">
+                        <td>IPK Kumulatif</td>
+                        <td>3.55</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

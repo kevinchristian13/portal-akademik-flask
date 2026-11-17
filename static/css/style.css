@@ -1,0 +1,79 @@
+:root {
+    --warna-utama: #8B0000;
+    --warna-utama-gelap: #680000;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+.navbar-custom {
+    background-color: var(--warna-utama) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    border-radius: 20px;
+    padding: 6px 15px !important;
+    margin: 0 3px;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: #fff !important;
+    background: rgba(255,255,255,0.2);
+    font-weight: 600;
+    transform: translateY(-2px);
+}
+
+.bg-merah {
+    background-color: var(--warna-utama) !important;
+    color: white !important;
+}
+
+.btn-outline-merah {
+    color: var(--warna-utama) !important;
+    border-color: var(--warna-utama) !important;
+}
+
+.btn-outline-merah:hover {
+    background-color: var(--warna-utama) !important;
+    color: white !important;
+}
+
+.btn-merah {
+    background-color: var(--warna-utama) !important;
+    color: white !important;
+    border: none;
+}
+
+.btn-merah:hover {
+    background-color: var(--warna-utama-gelap) !important;
+    color: white !important;
+}
+
+/* Styling Sidebar Admin */
+.sidebar-admin {
+    min-height: calc(100vh - 56px);
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar-admin .nav-link {
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+}
+
+.sidebar-admin .nav-link:hover,
+.sidebar-admin .nav-link.active {
+    background-color: var(--warna-utama);
+    color: #fff;
+}

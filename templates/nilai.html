@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Tugas 2 Interaktif - Portal Akademik{% endblock %}
+
+{% block content %}
+<section id="nilai-section" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="mb-3">Daftar Nilai & IPK (Interaktif)</h2>
+
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-6 mb-2 mb-md-0">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cari mata kuliah...">
+        </div>
+        <div class="col-md-6 text-md-end">
+            <button id="toggleSummaryBtn" class="btn btn-outline-merah">Sembunyikan / Tampilkan Ringkasan IPK</button>
+        </div>
+    </div>
+
+    <div id="summaryCard" class="card mb-4 bg-white shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Ringkasan Akademik Dinamis</h5>
+            <p class="mb-1">Total SKS: <strong id="totalSKS">0</strong></p>
+            <p class="mb-0">IPK Kumulatif: <strong id="ipkValue">0.00</strong></p>
+        </div>
+    </div>          
+
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th scope="col" class="bg-merah">No</th>
+                    <th scope="col" class="bg-merah">Mata Kuliah</th>
+                    <th scope="col" class="bg-merah">SKS</th>
+                    <th scope="col" class="bg-merah">Nilai Huruf</th>
+                    <th scope="col" class="bg-merah">Bobot</th>
+                    <th scope="col" class="bg-merah">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="nilaiTableBody"></tbody>
+        </table>
+    </div>
+
+    <div class="card mt-4 shadow-sm border-0">
+        <div class="card-header bg-merah">
+            <h5 class="mb-0">Tambah Data Nilai</h5>
+        </div>
+        <div class="card-body">
+            <form id="formNilai" novalidate>
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label for="inputMatkul" class="form-label">Mata Kuliah</label>
+                        <input type="text" class="form-control" id="inputMatkul" placeholder="Contoh: Pemrograman Web">
+                        <div class="invalid-feedback">Nama mata kuliah tidak boleh kosong.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputSks" class="form-label">SKS</label>
+                        <input type="number" class="form-control" id="inputSks" min="1" max="6" placeholder="1 - 6">
+                        <div class="invalid-feedback">SKS harus antara 1 sampai 6.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputNilai" class="form-label">Nilai Huruf</label>
+                        <select class="form-select" id="inputNilai">
+                            <option value="">Pilih Nilai...</option>
+                            <option value="A">A (4.0)</option>
+                            <option value="A-">A- (3.7)</option>
+                            <option value="B+">B+ (3.3)</option>
+                            <option value="B">B (3.0)</option>
+                            <option value="B-">B- (2.7)</option>
+                            <option value="C+">C+ (2.3)</option>
+                            <option value="C">C (2.0)</option>
+                            <option value="D">D (1.0)</option>
+                            <option value="E">E (0.0)</option>
+                        </select>
+                        <div class="invalid-feedback">Pilih nilai huruf yang sesuai.</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-merah mt-3">Tambah Nilai</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

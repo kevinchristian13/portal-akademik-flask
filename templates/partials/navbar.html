@@ -1,0 +1,25 @@
+{% set menu = [
+    ("index", "Data Diri"),
+    ("matkul", "Daftar Mata Kuliah"),
+    ("nilai", "Tugas 2 Interaktif"),
+    ("admin_dashboard", "Admin Dashboard")
+] %}
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Portal Akademik</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                {% for endpoint, label in menu %}
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint == endpoint }}"
+                       href="{{ url_for(endpoint) }}">{{ label }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

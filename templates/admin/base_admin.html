@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block layout %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Desktop -->
+        <aside class="col-md-3 col-lg-2 d-none d-md-block sidebar-admin p-3">
+            <h6 class="text-uppercase text-muted fw-bold mb-3 px-2">Menu Admin</h6>
+            <nav class="nav flex-column">
+                <a class="nav-link {{ 'active' if request.endpoint == 'admin_dashboard' }}" 
+                   href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+                <a class="nav-link" href="{{ url_for('matkul') }}">Kelola Mata Kuliah</a>
+                <a class="nav-link" href="{{ url_for('nilai') }}">Input Nilai</a>
+                <hr>
+                <a class="nav-link text-danger" href="{{ url_for('index') }}">Kembali ke Portal</a>
+            </nav>
+        </aside>
+
+        <!-- Konten Utama Admin -->
+        <main class="col-md-9 col-lg-10 p-4">
+            <!-- Topbar & Tombol Menu Mobile -->
+            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-outline-merah d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+                        ☰ Menu
+                    </button>
+                    <h3 class="mb-0">{% block judul %}{% endblock %}</h3>
+                </div>
+                <span class="badge bg-merah p-2">Admin: Michael Kevin</span>
+            </div>
+
+            <!-- Offcanvas Sidebar untuk Tampilan HP (Mobile) -->
+            <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="sidebarMobile">
+                <div class="offcanvas-header bg-merah text-white">
+                    <h5 class="offcanvas-title">Menu Admin</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <nav class="nav flex-column">
+                        <a class="nav-link active text-dark fw-bold" href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+                        <a class="nav-link text-dark" href="{{ url_for('matkul') }}">Kelola Mata Kuliah</a>
+                        <a class="nav-link text-dark" href="{{ url_for('nilai') }}">Input Nilai</a>
+                        <hr>
+                        <a class="nav-link text-danger" href="{{ url_for('index') }}">Kembali ke Portal</a>
+                    </nav>
+                </div>
+            </div>
+
+            {% block admin_content %}{% endblock %}
+        </main>
+    </div>
+</div>
+{% endblock %}
